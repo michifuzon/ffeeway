@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Ffee Way — The way to find coffee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ffee Way — The way to find coffee. Mapa de cafeterías, reseñas con fotos y tienda de productos de café de especialidad." />
+  <meta name="color-scheme" content="dark light" />
+  <link rel="stylesheet" href="stylesindex.css" />
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <!-- Header (sticky) -->
+  <header class="site-header" aria-label="Barra principal">
+    <div class="container nav">
+      <a class="brand" href="#hero" aria-label="Volver al inicio">
+        <span class="brand-mark" aria-hidden="true">☕</span>
+        <span class="brand-text">FFEE WAY</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav id="site-nav" class="links" aria-label="Secciones">
+        <a href="#acerca">Acerca</a>
+        <a href="#tienda">Tienda</a>
+        <a href="#mapa">Mapa</a>
+        <a href="#resenas">Reseñas & Fotos</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="section hero" aria-labelledby="hero-title">
+      <div class="container">
+        <p class="badge">Documento inicial del proyecto • v1</p>
+        <h1 id="hero-title" class="hero-title">
+          FFEE WAY
+          <span class="tagline">— The way to find coffee</span>
+        </h1>
+        <p class="lead">
+          Un espacio donde los amantes del café descubren <b>cafeterías cercanas</b> en un mapa,
+          comparten <b>reseñas y fotos</b> y compran <b>productos</b> de especialidad.
+        </p>
+        <div class="cta">
+          <a class="btn" href="#mapa">Ver mapa</a>
+          <a class="btn secondary" href="#tienda">Explorar tienda</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Acerca / Concepto (fluido, sin cajas) -->
+    <section id="acerca" class="section section-soft" aria-labelledby="acerca-title">
+      <div class="container narrow">
+        <h2 id="acerca-title">Acerca del proyecto</h2>
+        <p>
+          Los productos se comoditizan; el diferencial real está en la <b>experiencia</b>. Ffee Way
+          combina <b>comunidad</b> y <b>store</b>: la comunidad aporta tráfico, datos y confianza; la tienda
+          monetiza con un catálogo curado y competitivo.
+        </p>
+        <ul class="bullets">
+          <li>Mapa de <b>cafeterías</b> con calificación y filtros.</li>
+          <li><b>Reseñas con fotos</b>, métodos y notas de cata.</li>
+          <li>Perfiles de <b>baristas</b> y <b>productos</b>.</li>
+          <li><b>Tienda</b> con marcas propias y de terceros.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Tienda (ancla para futuro catálogo) -->
+    <section id="tienda" class="section" aria-labelledby="tienda-title">
+      <div class="container">
+        <h2 id="tienda-title">Tienda (marcas y líneas)</h2>
+        <p class="muted">
+          En el MVP mostraremos un catálogo liviano: cafeteras, grinders, filtros y café en grano.
+          Más adelante: balanzas, vajilla y accesorios. Esta sección será el “mount point” del catálogo.
+        </p>
+        <div class="mount-note">Punto de montaje: <code>#mount-store</code></div>
+        <div id="mount-store" class="mount-placeholder" role="img" aria-label="Listado de productos de ejemplo"></div>
+      </div>
+    </section>
+
+    <!-- Mapa -->
+    <section id="mapa" class="section section-soft" aria-labelledby="mapa-title">
+      <div class="container">
+        <h2 id="mapa-title">Mapa de cafeterías</h2>
+        <p class="muted">
+          Vista de cafeterías cercanas con rating de la comunidad. Filtros por método, tipo de leche,
+          opciones sin TACC, etc. Este bloque se integra luego con un SDK de mapas.
+        </p>
+        <div class="mount-note">Punto de montaje: <code>#mount-map</code></div>
+        <div id="mount-map" class="map-placeholder" role="img" aria-label="Mapa de ejemplo"></div>
+      </div>
+    </section>
+
+    <!-- Reseñas & Fotos -->
+    <section id="resenas" class="section" aria-labelledby="resenas-title">
+      <div class="container narrow">
+        <h2 id="resenas-title">Reseñas & Fotos</h2>
+        <p class="muted">
+          Reseñas cortas, fotos y notas de cata (UGC). Más adelante: perfiles, badges y reputación.
+        </p>
+        <div class="mount-note">Punto de montaje: <code>#mount-reviews</code></div>
+        <div id="mount-reviews" class="reviews-placeholder" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section id="roadmap" class="section section-soft" aria-labelledby="roadmap-title">
+      <div class="container narrow">
+        <h2 id="roadmap-title">Roadmap</h2>
+        <ol class="roadmap">
+          <li><b>MVP</b>: landing + mapa básico + catálogo chico.</li>
+          <li><b>v1</b>: reseñas con fotos, perfiles y checkout.</li>
+          <li><b>v2</b>: afiliados, colecciones curadas y mayorista.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section" aria-labelledby="contacto-title">
+      <div class="container narrow">
+        <h2 id="contacto-title">Contacto</h2>
+        <p class="muted">¿Querés sumarte como barista, cafetería o marca? Escribinos.</p>
+        <form class="contact-form" action="#" method="post">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="tu@email.com" required>
+          <label class="sr-only" for="msg">Mensaje</label>
+          <textarea id="msg" name="mensaje" rows="3" placeholder="Contame cómo te gustaría participar"></textarea>
+          <button class="btn" type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span class="mono">Ffee Way</span>. The way to find coffee.</small>
+      <a class="back-to-top" href="#hero" aria-label="Volver arriba">↑</a>
+    </div>
+  </footer>
+</body>
+</html>
