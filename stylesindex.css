@@ -138,3 +138,36 @@ code{background: rgba(255,255,255,.08); padding:2px 6px; border-radius:6px}
   html{scroll-behavior:auto}
   .btn:hover{filter:none}
 }
+
+/* === Gate disuasivo (modal) — NO es seguridad real === */
+/* Espera de autenticación: oculta la app, deja visible el modal */
+html.needs-auth body > * { visibility: hidden; }
+html.needs-auth .fw-gate-overlay { visibility: visible !important; }
+
+/* Overlay + tarjeta */
+.fw-gate-overlay{
+  position:fixed; inset:0; display:grid; place-items:center;
+  background:rgba(35,24,21,.92); backdrop-filter:blur(4px); z-index:99999;
+}
+.fw-gate-card{
+  width:min(92dvw,380px); border-radius:16px; padding:22px 20px;
+  background: color-mix(in srgb, var(--coffee-800, #3b2f2a) 80%, #000 20%);
+  border:1px solid rgba(255,255,255,.08); box-shadow:0 10px 40px rgba(0,0,0,.5);
+  color:var(--sand-50, #f7f2ea); font:400 16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+.fw-gate-title{margin:0 0 6px;font-size:1.15rem;font-weight:800;letter-spacing:.2px}
+.fw-gate-sub{margin:0 0 14px;color:#e9dfd3cc;font-size:.95rem}
+.fw-gate-row{display:grid;gap:10px;margin:8px 0 10px}
+.fw-gate-input{
+  width:100%;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.06);color:inherit;outline:none;
+}
+.fw-gate-input::placeholder{color:#e9dfd399}
+.fw-gate-actions{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:6px}
+.fw-gate-btn{
+  appearance:none;border:0;cursor:pointer;padding:10px 14px;border-radius:12px;font-weight:700;
+  background:linear-gradient(180deg,var(--caramel-500,#b9884b),#976a39);color:#1b120f;
+}
+.fw-gate-btn.secondary{background:transparent;color:inherit;border:1px solid rgba(255,255,255,.18)}
+.fw-gate-err{min-height:20px;color:#ffb4a2}
+.fw-gate-tries{font-size:.85rem;color:#e9dfd3cc}
