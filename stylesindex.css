@@ -212,3 +212,11 @@ body::after{ z-index: 0; }
   border:0;
   display:block;
 }
+
+/* Anti-zoom en móviles: inputs a 16px */
+input, textarea, select, .fw-gate-input{
+  font-size:16px !important;
+}
+
+/* Evita reescalado “inteligente” de iOS */
+html{ -webkit-text-size-adjust:100%; }
