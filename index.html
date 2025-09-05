@@ -95,7 +95,15 @@
           opciones sin TACC, etc. Este bloque se integra luego con un SDK de mapas.
         </p>
         <div class="mount-note">Punto de montaje: <code>#mount-map</code></div>
-        <div id="mount-map" class="map-placeholder" role="img" aria-label="Mapa de ejemplo"></div>
+        <!-- Mapa real centrado en Córdoba, Argentina -->
+        <div id="mount-map" class="map-embed" aria-label="Mapa">
+          <iframe
+            title="Mapa de Córdoba, Argentina"
+            src="https://www.google.com/maps?ll=-31.420083,-64.188776&z=12&t=m&output=embed"
+            loading="lazy" allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
     </section>
 

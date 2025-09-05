@@ -42,11 +42,6 @@ if (mountStore) {
   mountStore.textContent = 'Aquí irá el catálogo inicial de Ffee Way (ej.: 4 productos destacados).';
 }
 
-const mountMap = document.getElementById('mount-map');
-if (mountMap) {
-  mountMap.textContent = 'Mapa embebido (SDK) — cafeterías cercanas y filtros.';
-}
-
 const mountReviews = document.getElementById('mount-reviews');
 if (mountReviews) {
   const sample = [

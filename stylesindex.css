@@ -19,10 +19,7 @@ body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Inter, Arial, "Noto Sans";
   color: var(--sand-50);
-  background:
-    radial-gradient(1200px 600px at 20% -20%, #5a4336 0%, transparent 60%),
-    radial-gradient(1000px 500px at 120% 20%, #46332a 0%, transparent 50%),
-    linear-gradient(180deg, var(--coffee-900), var(--coffee-950));
+  background: #231815; /* var(--coffee-950) sólido */
 }
 
 /* Utilidades */
@@ -62,7 +59,7 @@ body{
 
 /* Hero */
 .section{padding: clamp(56px, 8vw, 100px) 0}
-.section-soft{background: rgba(255,255,255,.03)}
+.section-soft{ background: transparent; } /* antes tenía un tono; ahora transparente */
 .hero-title{margin:0; font-size:clamp(2.2rem, 6vw, 3.4rem); line-height:1.1; letter-spacing:.2px}
 .tagline{display:block; font-size:clamp(1rem, 2.5vw, 1.25rem); color:#eaddcf; margin-top:.25rem}
 .lead{color:#eaddcf; max-width:65ch; font-size:1.05rem}
@@ -89,6 +86,7 @@ p{margin:0 0 12px}
 .bullets li{margin:6px 0}
 .muted{color:#e9dfd3cc}
 
+/* Placeholders */
 .map-placeholder, .mount-placeholder, .reviews-placeholder{
   border:1px dashed rgba(255,255,255,.18);
   border-radius:16px;
@@ -139,6 +137,15 @@ code{background: rgba(255,255,255,.08); padding:2px 6px; border-radius:6px}
   .btn:hover{filter:none}
 }
 
+/* === Colores fijos por sección === */
+#hero     { background: #2a1f1c; } /* cacao profundo */
+#acerca   { background: #352a25; } /* mocha */
+#tienda   { background: #41322d; } /* espresso */
+#mapa     { background: #4a3832; } /* avellana */
+#resenas  { background: #3b2f2a; } /* medium roast */
+#roadmap  { background: #332622; } /* caramelo oscuro */
+#contacto { background: #2a1e1b; } /* casi negro cálido */
+
 /* === Gate disuasivo (modal) — NO es seguridad real === */
 /* Espera de autenticación: oculta la app, deja visible el modal */
 html.needs-auth body > * { visibility: hidden; }
@@ -171,3 +178,37 @@ html.needs-auth .fw-gate-overlay { visibility: visible !important; }
 .fw-gate-btn.secondary{background:transparent;color:inherit;border:1px solid rgba(255,255,255,.18)}
 .fw-gate-err{min-height:20px;color:#ffb4a2}
 .fw-gate-tries{font-size:.85rem;color:#e9dfd3cc}
+
+/* === Brillos globales sin separación entre secciones === */
+body{ position: relative; }
+body::after{
+  content:"";
+  position: fixed;
+  inset: -20vh -20vw;      /* overscan para pantallas grandes */
+  pointer-events: none;
+  z-index: 1;
+  background:
+    radial-gradient(1200px 700px at 15% -10%, rgba(255,255,255,.06), rgba(255,255,255,0) 60%),
+    radial-gradient(900px 500px  at 110% 25%, rgba(255,255,255,.05), rgba(255,255,255,0) 55%),
+    radial-gradient(800px 500px  at -10% 85%, rgba(255,255,255,.035), rgba(255,255,255,0) 60%);
+  mix-blend-mode: soft-light;  /* brillo uniforme sobre todos los colores */
+}
+
+/* Brillos por DEBAJO del contenido (evita sombras sobre el mapa) */
+body::after{ z-index: 0; }
+.site-header, main, .site-footer { position: relative; z-index: 1; }
+
+/* Mapa: marco super fino + altura más chica */
+.map-embed{
+  border-radius:16px;
+  overflow:hidden;
+  background: transparent;
+  box-shadow: 0 0 0 .5px rgba(0,0,0,.9);  /* hairline */
+  line-height: 0;
+}
+.map-embed iframe{
+  width:100%;
+  height: clamp(260px, 48vh, 520px);      /* ↓ antes: 320px,60vh,560px */
+  border:0;
+  display:block;
+}
